@@ -23,6 +23,9 @@ Route::group(['middleware' => 'auth:sanctum', 'prefix' => '/auth'], function () 
     Route::post('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
     Route::post('/spending', [SpendingController::class, 'store'])->name('spending.store');
+    Route::post('/spending-entries', [SpendingController::class, 'entries'])->name('spending.entries');
+    Route::post('/spending-search', [SpendingController::class, 'search'])->name('spending.search');
+    Route::post('/spending-outs', [SpendingController::class, 'outs'])->name('spending.outs');
     Route::post('/spending-user', [SpendingController::class, 'getByUser'])->name('spending.getByUser');
     Route::post('/spending-show', [SpendingController::class, 'show'])->name('spending.show');
     Route::post('/spending-update', [SpendingController::class, 'update'])->name('spending.update');
