@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('table_spending', function (Blueprint $table) {
-            $table->id();
-            $table->string('description')->nulable();
-            $table->bigInteger('price')->nulable();
-            $table->string('category')->nulable();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('type');
         });
     }
 
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_spending');
+        Schema::dropColumn('type');
     }
 };
